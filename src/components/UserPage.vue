@@ -318,25 +318,35 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  methods: {
-    openFileInput() {
-      this.$refs.fileInput.click();
-    },
-    handleFileUpload(e: any) {
-      const files = e.target.files;
-      for(let i = 0; i < files.length; i++) {
-        const file = files[i];
-        const fileReader = new FileReader();
-        fileReader.onload = (e: any) => {
-          console.log(e.target.result);
-        }
-        fileReader.readAsText(file);
+  setup() {
+    const fileInput = ref<HTMLInputElement | null>(null)
+    function openFileInput() {
+      if (fileInput.value) {
+        fileInput.value.click();
       }
     }
+    function handleFileUpload(e: Event) {
+      const files = (e.target as HTMLInputElement).files;
+      if (files) {
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          const fileReader = new FileReader();
+          fileReader.onload = (e: any) => {
+            console.log(e.target.result);
+            // do something with file content
+          }
+          fileReader.readAsText(file);
+        }
+      }
+    }
+    return {
+      openFileInput,
+      handleFileUpload,
+      fileInput
+    }
   }
-})
+});
 </script>
