@@ -189,4 +189,9 @@ input{
 
 <script lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+export default{
+data(){
+  
+}
+}
 </script>

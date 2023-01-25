@@ -12,9 +12,12 @@
                                 </path>
                             </svg></button></div>
                 </div>
-                <div class="flex flex-col md:flex-row md:-mx-4 hidden md:block"><a href="#"
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Сообщения</a><a href="#"
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Профиль</a><a href="#"
+                <div class="flex flex-col md:flex-row md:-mx-4 hidden md:block">
+                    <RouterLink to="/err"
+                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Сообщения</RouterLink>
+                        <RouterLink to="/page" 
+                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Профиль</RouterLink>
+                        <a href="#"
                         class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Пользователи</a></div>
             </div>
         </nav>
@@ -244,7 +247,7 @@
 
 </template>
 <script lang="ts">
-
+import { RouterLink, RouterView } from 'vue-router'
 
 
 export default {

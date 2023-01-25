@@ -23,7 +23,22 @@ const router = createRouter({
       path: '/lenta',
       name: 'lenta',
       component: () => import('../components/Lenta.vue')
-    }
+    },
+    {
+      path: '/page',
+      name: 'page',
+      component: () => import('../components/UserPage.vue')
+    },
+    {
+      path: '/err',
+      name: 'err',
+      component: () => import('../components/Err404.vue')
+    },
+    /*{
+      path: '/full_users',
+      name: 'full_users',
+      component: () => import('../components/')
+    }*/
   ]
 })
 
