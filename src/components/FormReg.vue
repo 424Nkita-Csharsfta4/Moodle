@@ -6,7 +6,7 @@
     >
       <img
         alt="Night"
-        src="http://militar.spsu.ru/images/news/2020/03/10/01-11-1536x1024.jpg"
+        src="../assets/bg.jpg"
         class="absolute inset-0 h-full w-full object-cover opacity-50"
       />
 
@@ -154,14 +154,7 @@
               <RouterLink to="/about" class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500 dark:hover:bg-blue-700 dark:hover:text-white">
               Создать Акаунт
             </RouterLink>
-            <button class="flex items-center mt-5 bg-green-600 hover:bg-blue-700 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100">
-                       
-                       <span>Поменяь задний фон</span>
-                   </button>
-                   <button class="flex items-center mt-5 bg-red-600 hover:bg-blue-700 text-gray-100 px-4 py-2 rounded text-sm space-x-2 transition duration-100">
-                      
-                       <span>Поменять аватарку</span>
-                   </button>
+          
             
             <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
             у тебя еже есть акаунт?

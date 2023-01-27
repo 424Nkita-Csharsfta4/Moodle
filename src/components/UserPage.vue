@@ -5,12 +5,13 @@
 <nav class="bg-white w-full flex relative shadow justify-between items-center px-8 h-20">
     <!-- logo -->
     <div class="inline-flex">
-        <a class="_o6689fn" href="/lenta">
+        <a  href="/lenta">
            Moodle
         </a>
+        <RouterLink to="/edits" class="ml-5 text-sm leading-normal text-gray-400">Редактировать профиль</RouterLink>
     </div>
 
-  
+    <RouterView />
     <div class="relative hidden sm:block flex-shrink flex-grow-0">
         <input type="text" class="bg-purple-white bg-gray-100 rounded-lg border-0 p-3 w-full" placeholder="Поиск Людей" style="min-width:400px;">
         <div class="absolute top-0 right-0 p-4 pr-3 text-purple-lighter">
@@ -20,7 +21,7 @@
 
 </nav>
 
-<main class="grid grid-cols-1 lg:grid-cols-2 gap-6 my-12 mx-12 w-2xl container px-2 mx-auto">
+<main class="grid grid-cols-1 lg:grid-cols-2 gap-6 my-12 mx-12 w-2xl container px-2 ">
 
     <aside class="">
     
@@ -130,21 +131,34 @@
 
     <article class="">
 
-        <form class="bg-white shadow rounded-lg mb-6 p-4">
-            <textarea name="message" placeholder="Написать пост" class="w-full rounded-lg p-2 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400"></textarea>
-            <footer class="flex justify-between mt-2">
-                <div class="flex gap-2">
-                    <button @click="openFileInput" class="flex items-center transition ease-out duration-300 hover:bg-blue-500 hover:text-white bg-blue-100 w-8 h-8 px-2 rounded-full text-blue-400 cursor-pointer">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-                    </button>
-                    <input type="file" ref="fileInput" @change="handleFileUpload" style="display:none"/>
-                </div>
-                <button class="flex items-center py-2 px-4 rounded-lg text-sm bg-blue-600 text-white shadow-lg">Отправить 
-                    <svg class="ml-1" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                </button>
-            </footer>
-        </form>
-
+    
+        <div class="bg-white rounded-lg p-6">
+    <div class="flex flex-col">
+      <Post
+        v-for="post in posts"
+        :key="post.id"
+        :title="post.title"
+        :content="post.content"
+        :image="post.image"
+        :date="post.date"
+      />
+    </div>
+    <div class="my-4">
+      <div class="mb-2">
+        <input v-model="newPost.title" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full leading-5" placeholder="Заголовок поста">
+      </div>
+      <div class="mb-2">
+        <textarea v-model="newPost.content" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full leading-5" placeholder="Описание"></textarea>
+      </div>
+      <input type="file" ref="file" @change="handleFileUpload" >
+    
+      <div>
+        <button @click="createPost" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg">
+          Выложить пост
+        </button>
+      </div>
+    </div>
+  </div>
         <div class="bg-white shadow rounded-lg mb-6">
             <div class="flex flex-row px-2 py-3 mx-3">
                 <div class="w-auto h-auto rounded-full">
@@ -318,35 +332,98 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { RouterLink, RouterView } from 'vue-router'
+import Post from './Post.vue';
+import axios from 'axios';
 
-export default defineComponent({
-  setup() {
-    const fileInput = ref<HTMLInputElement | null>(null)
-    function openFileInput() {
-      if (fileInput.value) {
-        fileInput.value.click();
-      }
-    }
-    function handleFileUpload(e: Event) {
-      const files = (e.target as HTMLInputElement).files;
-      if (files) {
-        for (let i = 0; i < files.length; i++) {
-          const file = files[i];
-          const fileReader = new FileReader();
-          fileReader.onload = (e: any) => {
-            console.log(e.target.result);
-            // do something with file content
-          }
-          fileReader.readAsText(file);
-        }
-      }
-    }
+
+interface Post {
+  id: number;
+  title: string;
+  content: string;
+  image:string;
+  date: string;
+  likes: number;
+  comments: Comment[];
+}
+
+export default {
+  components: {
+    Post
+  },
+  data() {
     return {
-      openFileInput,
-      handleFileUpload,
-      fileInput
+        posts: [] as Post[],
+        newPost: {
+        title: '',
+        content: '',
+        image: '',
+        date: ''
+      }
+    }
+  },
+  props: {
+    posts: {
+      type: Array as () => Post[],
+      required: true
+    }
+  },
+  
+  setup(props) {
+    function likePost(postId: number) {
+      // Код для лайка поста
+    }
+
+    function addComment(postId: number) {
+      // Код для добавления комментария
+    }
+
+    return {
+      likePost,
+      addComment
+    }
+  },
+  handleFileUpload(event:any) {
+   const file = event.target.files[0]
+   this.newPost.image = file.path
+   
+},
+  methods: {
+    handleFileUpload(event:any) {
+    this.newPost.image = URL.createObjectURL(event.target.files[0])
+},
+    createPost() {
+      const post = {
+        id: Date.now(),
+        title: this.newPost.title,
+        content: this.newPost.content,
+        date: new Date().toLocaleString(),
+        image: this.newPost.image
+      }
+      
+      this.newPost = {
+        title: '',
+        content: '',
+        date: '',
+        image:''
+      }
+    },
+    async uploadImage(image: File) {
+    const formData = new FormData()
+    formData.append('image', image)
+
+    try {
+      const response = await axios.post('/server/upload', formData)
+      return response.data.imageUrl
+    } catch (error) {
+      console.error(error)
     }
   }
-});
+
+
+  }
+}
+
+
+
 </script>

@@ -34,11 +34,11 @@ const router = createRouter({
       name: 'err',
       component: () => import('../components/Err404.vue')
     },
-    /*{
-      path: '/full_users',
-      name: 'full_users',
-      component: () => import('../components/')
-    }*/
+    {
+      path: '/edits',
+      name: 'edit',
+      component: () => import('../components/UserEditor.vue')
+    }
   ]
 })
 

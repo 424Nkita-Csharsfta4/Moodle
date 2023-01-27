@@ -6,7 +6,7 @@
     >
       <img
         alt="Night"
-        src="http://militar.spsu.ru/images/news/2020/03/10/01-11-1536x1024.jpg"
+        src="../assets/bg.jpg"
         class="absolute inset-0 h-full w-full object-cover opacity-50"
       />
 
