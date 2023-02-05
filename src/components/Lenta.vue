@@ -3,16 +3,14 @@
         <nav class="bg-white px-6 py-4 shadow">
             <div class="flex flex-col container mx-auto md:flex-row md:items-center md:justify-between">
                 <div class="flex justify-between items-center">
-                    <div><a href="/page" class="text-gray-800 text-xl font-bold md:text-2xl">Moodle</a></div>
-                  
-                </div>
-                <div class="flex flex-col md:flex-row md:-mx-4 hidden md:block">
+                    <div><a href="/page" class="text-gray-800 text-xl font-bold md:text-2xl">Moodle</a></div>                   
                     <RouterLink to="/err"
                         class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Сообщения</RouterLink>
                         <RouterLink to="/page" 
                         class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Профиль</RouterLink>
-                        <a href="#"
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Пользователи</a></div>
+                         <RouterLink to="/fullusers"
+                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Пользователи</RouterLink>
+                    </div>     
             </div>
         </nav>
         <div class="px-6 py-8">
@@ -20,6 +18,9 @@
                 <div class="w-full lg:w-8/12">
                     <div class="flex items-center justify-between">
                         <h1 class="text-xl font-bold text-gray-700 md:text-2xl">Посты</h1>
+                        <RouterLink to="/createpost"
+                        class="text-xl font-bold text-gray-700 md:text-2xl">Добавить пост</RouterLink>
+                        
                         <div><select
                                 class="block bg-gray-300 text-gray-700 py-2 px-2 rounded-lg focus:outline-none md:py-3">
                                 <option>Последнии</option>

@@ -38,6 +38,16 @@ const router = createRouter({
       path: '/edits',
       name: 'edit',
       component: () => import('../components/UserEditor.vue')
+    },
+    {
+      path: '/createpost',
+      name: 'createpost',
+      component: () => import('@/module/AddPost.vue')
+    },
+    {
+      path: '/fullusers',
+      name: 'fullusers',
+      component: () => import('@/api/FullUsersTiraspol.vue')
     }
   ]
 })
