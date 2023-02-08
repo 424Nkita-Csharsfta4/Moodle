@@ -258,7 +258,7 @@
 
 </template>
 <script lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink } from 'vue-router'
 
 
 export default {

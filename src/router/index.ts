@@ -98,12 +98,8 @@ const router = createRouter({
       path: '/readblogs',
       name: 'readblogs',
       component: () => import('@/module/ReadBlogs/MainBlogs.vue')
-    },
-    {
-      path: '/calendar',
-      name: 'calendar',
-      component: () => import('@/module/Calandar/Calendar.vue')
     }
+   
   ]
 })
 
