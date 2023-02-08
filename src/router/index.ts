@@ -57,7 +57,7 @@ const router = createRouter({
     {
       path: '/game',
       name: 'game',
-      component: () => import('@/module/MainQuize.vue')
+      component: () => import('@/module/QuizLanguage/MainQuize.vue')
     },
     {
       path: '/scharp',
