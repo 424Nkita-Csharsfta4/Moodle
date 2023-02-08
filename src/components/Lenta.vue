@@ -17,7 +17,7 @@
                         class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Пользователи</RouterLink>
                         <RouterLink to="/news"
                         class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Новости</RouterLink>
-                        <RouterLink to="/scharp"
+                        <RouterLink to="/game"
                         class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Тесты</RouterLink>
                         <RouterLink to="/calendar" readblogs
                         class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Календарь</RouterLink>

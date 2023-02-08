@@ -94,6 +94,11 @@ const router = createRouter({
       path: '/readblogs',
       name: 'readblogs',
       component: () => import('@/module/ReadBlogs/MainBlogs.vue')
+    },
+    {
+      path: '/game',
+      name: 'game',
+      component: () => import('@/module/QuizLanguage/MainQuize.vue')
     }
    
   ]
