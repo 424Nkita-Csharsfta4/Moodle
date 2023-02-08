@@ -1,18 +1,31 @@
 <template>
-    <div id="app" class="font-roboto bg-gray-100">
-        <nav class="bg-white px-6 py-4 shadow">
+    <div  x-data="{ isOpen: false }"  class="font-roboto overflow-hidden bg-gray-100 absolute inset-x-0 z-20 flex-1 w-full ">
+        <nav class="bg-white px-6 py-4 shadow container lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center">
             <div class="flex flex-col container mx-auto md:flex-row md:items-center md:justify-between">
-                <div class="flex justify-between items-center">
-                    <div><a href="/page" class="text-gray-800 text-xl font-bold md:text-2xl">Moodle</a></div>                   
-                    <RouterLink to="/err"
+                <div class="flex justify-between items-center lg:flex lg:items-center">
+                    <div class="lg:flex lg:items-center"><a href="/page" class="text-gray-800 text-xl font-bold md:text-2xl">Moodle</a></div>                   
+                    <RouterLink to="/chat"
                         class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Сообщения</RouterLink>
                         <RouterLink to="/page" 
                         class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Профиль</RouterLink>
-                         <RouterLink to="/fullusers"
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Пользователи</RouterLink>
+                        <RouterLink to="/err" 
+                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Музыка</RouterLink>
+                       
                     </div>     
+                    <div class="py-1 mt-1 -mx-1 overflow-y-auto whitespace-nowrap scroll-hidden ">
+                        <RouterLink to="/fullusers"
+                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Пользователи</RouterLink>
+                        <RouterLink to="/news"
+                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Новости</RouterLink>
+                        <RouterLink to="/game"
+                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Тесты</RouterLink>
+                        <RouterLink to="/calendar" readblogs
+                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Календарь</RouterLink>
+           
+        </div>
             </div>
         </nav>
+
         <div class="px-6 py-8">
             <div class="flex justify-between container mx-auto">
                 <div class="w-full lg:w-8/12">
@@ -38,8 +51,10 @@
                                     Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                     reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
                             </div>
-                            <div class="flex justify-between items-center mt-4"><a href="#"
-                                    class="text-blue-500 hover:underline">Читать</a>
+                            <div class="flex justify-between items-center mt-4">
+                                
+                                <RouterLink to="/readblogs"
+                                    class="text-blue-500 hover:underline">Читать</RouterLink>
                                 <div><a href="#" class="flex items-center"><img
                                             src="https://sun9-west.userapi.com/sun9-49/s/v1/ig2/0KFhmIedJJWvn9W5R3QsK_i-5Q9M-tjLdJnqkYKcauHz9MnptSVqoNusLCdyq5lb_CDv5L8LpVxjDkEUfO0NwGOG.jpg?size=1183x987&quality=95&type=album"
                                             alt="avatar"
@@ -61,8 +76,9 @@
                                     Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                     reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
                             </div>
-                            <div class="flex justify-between items-center mt-4"><a href="#"
-                                    class="text-blue-500 hover:underline">Читать</a>
+                            <div class="flex justify-between items-center mt-4">
+                                <RouterLink to="/readblogs"
+                                    class="text-blue-500 hover:underline">Читать</RouterLink>
                                 <div><a href="#" class="flex items-center"><img
                                             src="https://avatars.dzeninfra.ru/get-zen_doc/5031224/pub_631a459d8cfe570980e79013_631a45af77e4ed50aa753580/scale_1200"
                                             alt="avatar"
@@ -84,8 +100,8 @@
                                     Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                     reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
                             </div>
-                            <div class="flex justify-between items-center mt-4"><a href="#"
-                                    class="text-blue-500 hover:underline">Читать</a>
+                            <div class="flex justify-between items-center mt-4">       <RouterLink to="/readblogs"
+                                    class="text-blue-500 hover:underline">Читать</RouterLink>
                                 <div><a href="#" class="flex items-center"><img
                                             src="https://sun9-west.userapi.com/sun9-49/s/v1/ig2/0KFhmIedJJWvn9W5R3QsK_i-5Q9M-tjLdJnqkYKcauHz9MnptSVqoNusLCdyq5lb_CDv5L8LpVxjDkEUfO0NwGOG.jpg?size=1183x987&quality=95&type=album"
                                             alt="avatar"
@@ -107,8 +123,8 @@
                                     Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                     reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
                             </div>
-                            <div class="flex justify-between items-center mt-4"><a href="#"
-                                    class="text-blue-500 hover:underline">Читать</a>
+                            <div class="flex justify-between items-center mt-4">       <RouterLink to="/readblogs"
+                                    class="text-blue-500 hover:underline">Читать</RouterLink>
                                 <div><a href="#" class="flex items-center"><img
                                             src="https://sun9-west.userapi.com/sun9-45/s/v1/ig2/OTdMSPoUPfYAr74tizLw9Oafy8BL_h2ZF2XX8tQLEJPB4Wz_4AErA0PnJEtZnM2iaog9fGYT3C1sBKLd50bbZ2iA.jpg?size=480x463&quality=96&type=album"
                                             alt="avatar"
@@ -129,8 +145,8 @@
                                     Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                     reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
                             </div>
-                            <div class="flex justify-between items-center mt-4"><a href="#"
-                                    class="text-blue-500 hover:underline">Читать</a>
+                            <div class="flex justify-between items-center mt-4">       <RouterLink to="/readblogs"
+                                    class="text-blue-500 hover:underline">Читать</RouterLink>
                                 <div><a href="#" class="flex items-center"><img
                                             src="https://sun9-west.userapi.com/sun9-12/s/v1/ig2/S4Io9X8lMZjfigRzBMP0LZsqWONDzYuLrb7EY1wwETo66uvOAyc-3EN8Q9IlWb1a-c_SxiscCaQuYAUCrGMLGmGv.jpg?size=735x919&quality=95&type=album"
                                             alt="avatar"
@@ -300,3 +316,10 @@ export default {
     }
 }
 </script>
+<style>
+    .scroll-hidden::-webkit-scrollbar {
+        height: 0px;
+        background: transparent;
+        /* make scrollbar transparent */
+    }
+</style>

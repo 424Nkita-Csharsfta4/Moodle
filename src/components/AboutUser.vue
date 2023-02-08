@@ -10,7 +10,7 @@
         <div class="md:7/12 lg:w-6/12 pb-5">
           <h2 class="text-2xl text-gray-900 font-bold md:text-4xl">Учись в месте с нами </h2>
           <p class="mt-6 text-gray-600">Этот ресур был создан для изучения студентов новым специальностям!</p>
-          <p class="mt-4 text-gray-600">Это демо сайт для общения и очения чемуто новому.</p>
+          <p class="mt-4 text-gray-600">Это демо сайт для общения и учения чемуто новому.</p>
           <p class="mt-4 text-gray-600">Сайт сделан на технологиях</p>
           <p class="mt-4 text-gray-800">Frontend:Vue,TypeScript,Tailwind</p>
           <p class="mt-4 text-gray-800">Backend:Node,Php,Laravel</p>

@@ -48,6 +48,61 @@ const router = createRouter({
       path: '/fullusers',
       name: 'fullusers',
       component: () => import('@/api/FullUsersTiraspol.vue')
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: () => import('@/api/News.vue')
+    },
+    {
+      path: '/game',
+      name: 'game',
+      component: () => import('@/module/MainQuize.vue')
+    },
+    {
+      path: '/scharp',
+      name: 'scharp',
+      component: () => import('@/module/QuizLanguage/QuizeCsharp.vue')
+    },
+    {
+      path: '/dart',
+      name: 'dart',
+      component: () => import('@/module/QuizLanguage/QuizeDart.vue')
+    },
+    {
+      path: '/javascript',
+      name: 'javascript',
+      component: () => import('@/module/QuizLanguage/QuizeJavaScript.vue')
+    },
+    {
+      path: '/kotlin',
+      name: 'kotlin',
+      component: () => import('@/module/QuizLanguage/QuizeKotlin.vue')
+    },
+    {
+      path: '/php',
+      name: 'php',
+      component: () => import('@/module/QuizLanguage/QuizePHP.vue')
+    },
+    {
+      path: '/typescript',
+      name: 'typescript',
+      component: () => import('@/module/QuizLanguage/QuizeTypeScript.vue')
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: () => import('@/module/Chat/MainBars.vue')
+    },
+    {
+      path: '/readblogs',
+      name: 'readblogs',
+      component: () => import('@/module/ReadBlogs/MainBlogs.vue')
+    },
+    {
+      path: '/calendar',
+      name: 'calendar',
+      component: () => import('@/module/Calandar/Calendar.vue')
     }
   ]
 })

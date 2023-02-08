@@ -16,7 +16,7 @@
             </div>
 
             <div class="text-gray-400 font-medium text-sm md:text-xl lg:text-2xl mt-8">
-                Скоро сделаем чатик
+                Скоро все сделаем 
             </div>
         </div>        
     </div>

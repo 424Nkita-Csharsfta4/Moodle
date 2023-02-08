@@ -1,7 +1,4 @@
-# Moodl
-
-![image](https://user-images.githubusercontent.com/103760832/216820213-a496ee63-be77-4659-a77c-deba0ab5c9d4.png)
-
+# moofils
 
 This template should help get you started developing with Vue 3 in Vite.
 
