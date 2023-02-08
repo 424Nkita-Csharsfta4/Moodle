@@ -17,12 +17,14 @@
   </div>
 </template>
 
-<script >
+<script lang="ts" >
 import { ref, onMounted } from "vue";
 
 const API_KEY = "3f3f17eb24684c8894d0e6ecc143aade";
 
 export default {
+
+  
   setup() {
     const newsList = ref([]);
 
