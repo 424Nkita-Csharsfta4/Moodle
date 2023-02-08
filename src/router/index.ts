@@ -54,11 +54,7 @@ const router = createRouter({
       name: 'news',
       component: () => import('@/api/News.vue')
     },
-    {
-      path: '/game',
-      name: 'game',
-      component: () => import('@/module/QuizLanguage/MainQuize.vue')
-    },
+   
     {
       path: '/scharp',
       name: 'scharp',
