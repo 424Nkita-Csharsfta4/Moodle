@@ -68,7 +68,7 @@
             </span>
           </div>
      
-
+<!-----
               <div class="messages" id="messages">
                 <div class="message-container">
                   <h1 class="error" v-if="connection_error"> Ошибка подключения! </h1>
@@ -123,7 +123,7 @@
                   d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
               </svg>
             </button>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>
@@ -135,6 +135,7 @@ import { ref, onMounted } from 'vue';
 
 export default {
   name: 'MainBars',
+  /*
   setup() {
     const connection_ready = ref(false);
     const connection_error = ref(false);
@@ -186,6 +187,6 @@ export default {
       send_message,
       messages,
     };
-  },
+  },*/
 };
 </script>

@@ -1,4 +1,4 @@
-<template>
+<!-----<template>
     <div class="flex">
         <button class="btn-primary" @click="reset">Today</button>
         <button class="btn" @click="shiftMonth(-1)">Previous</button>
@@ -16,8 +16,9 @@
             <div :class="[d.isToday ? 'bg-red-300' : '']" class="text-center">{{ d.format('D') }}</div>
         </div>
     </div>
-</template>
+</template>-->
 <script lang="ts">
+/*
 import dayjs from 'dayjs';
 import 'dayjs/plugin/isToday';
 
@@ -67,7 +68,7 @@ export default {
         shiftMonth,
         reset,
     },
-};
+};*/
 </script>
 
 
