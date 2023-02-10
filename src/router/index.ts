@@ -98,7 +98,7 @@ const router = createRouter({
     {
       path: '/quizemain',
       name: 'quizemain',
-      component: () => import('@/module/QuizLanguage/MainQuize.vue')
+      component: () => import('@/module/MainQuize.vue')
     },
     {
       path: '/calendar',
