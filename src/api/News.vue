@@ -1,7 +1,8 @@
 <template>
-  <div class="flux xl:gap-x-8 gap-x-6" v-for="news in newsList" :key="news.id">
+  <div class="flux xl:gap-x-8 gap-x-6 bg-slate-800" v-for="news in newsList" :key="news.id">
     <div class="sm:w-1/2 relative">
       <div>
+        <h1 class="text-xl mt-5 mb-5 font-semibold text-white">Ности в мире</h1>
         <h2 class="text-xl mt-5 mb-5 font-semibold text-white">{{ news.title }}</h2>
         <div class="absolute bottom-0 left-0 p-6">
           <a href="#"
