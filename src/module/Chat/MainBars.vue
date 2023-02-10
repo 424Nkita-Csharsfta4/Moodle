@@ -22,7 +22,8 @@
             <a
               class="flex items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none">
               <img class="object-cover w-10 h-10 rounded-full"
-                src="https://sun9-west.userapi.com/sun9-45/s/v1/ig2/OTdMSPoUPfYAr74tizLw9Oafy8BL_h2ZF2XX8tQLEJPB4Wz_4AErA0PnJEtZnM2iaog9fGYT3C1sBKLd50bbZ2iA.jpg?size=480x463&quality=96&type=album" alt="username" />
+                src="https://sun9-west.userapi.com/sun9-45/s/v1/ig2/OTdMSPoUPfYAr74tizLw9Oafy8BL_h2ZF2XX8tQLEJPB4Wz_4AErA0PnJEtZnM2iaog9fGYT3C1sBKLd50bbZ2iA.jpg?size=480x463&quality=96&type=album"
+                alt="username" />
               <div class="w-full pb-2">
                 <div class="flex justify-between">
                   <span class="block ml-2 font-semibold text-gray-600">Vladislave</span>
@@ -34,7 +35,8 @@
             <a
               class="flex items-center px-3 py-2 text-sm transition duration-150 ease-in-out bg-gray-100 border-b border-gray-300 cursor-pointer focus:outline-none">
               <img class="object-cover w-10 h-10 rounded-full"
-                src="https://avatars.dzeninfra.ru/get-zen_doc/4281215/pub_631a459d8cfe570980e79013_631a45b9de25911ecb95f4b5/scale_1200" alt="username" />
+                src="https://avatars.dzeninfra.ru/get-zen_doc/4281215/pub_631a459d8cfe570980e79013_631a45b9de25911ecb95f4b5/scale_1200"
+                alt="username" />
               <div class="w-full pb-2">
                 <div class="flex justify-between">
                   <span class="block ml-2 font-semibold text-gray-600">Илон Маск</span>
@@ -46,7 +48,8 @@
             <a
               class="flex items-center px-3 py-2 text-sm transition duration-150 ease-in-out border-b border-gray-300 cursor-pointer hover:bg-gray-100 focus:outline-none">
               <img class="object-cover w-10 h-10 rounded-full"
-                src="https://avatars.dzeninfra.ru/get-zen_doc/5031224/pub_631a459d8cfe570980e79013_631a45af77e4ed50aa753580/scale_1200" alt="username" />
+                src="https://avatars.dzeninfra.ru/get-zen_doc/5031224/pub_631a459d8cfe570980e79013_631a45af77e4ed50aa753580/scale_1200"
+                alt="username" />
               <div class="w-full pb-2">
                 <div class="flex justify-between">
                   <span class="block ml-2 font-semibold text-gray-600">Дуэйн Джонс</span>
@@ -62,24 +65,25 @@
         <div class="w-full">
           <div class="relative flex items-center p-3 border-b border-gray-300">
             <img class="object-cover w-10 h-10 rounded-full"
-              src="https://avatars.dzeninfra.ru/get-zen_doc/5031224/pub_631a459d8cfe570980e79013_631a45af77e4ed50aa753580/scale_1200" alt="username" />
+              src="https://avatars.dzeninfra.ru/get-zen_doc/5031224/pub_631a459d8cfe570980e79013_631a45af77e4ed50aa753580/scale_1200"
+              alt="username" />
             <span class="block ml-2 font-bold text-gray-600">Дуэйн Джонс</span>
             <span class="absolute w-3 h-3 bg-green-600 rounded-full left-10 top-3">
             </span>
           </div>
-     
-<!-----
-              <div class="messages" id="messages">
-                <div class="message-container">
-                  <h1 class="error" v-if="connection_error"> Ошибка подключения! </h1>
-                  <div v-for="(m, idx) in messages" :key="'m-' + idx" style="clear:both">
-                    <div :class="{ 'msg-from-me': m.from == 'me', 'msg-from-other': m.from == 'other' }">
-                      {{ m.message }}
-                    </div>
-                  </div>
+
+
+          <div class="messages" id="messages">
+            <div class="message-container">
+              <h1 class="error" v-if="connection_error"> Ошибка подключения! </h1>
+              <div v-for="(m, idx) in messages" :key="'m-' + idx" style="clear:both">
+                <div :class="{ 'msg-from-me': m.from == 'me', 'msg-from-other': m.from == 'other' }">
+                  {{ m.message }}
                 </div>
               </div>
-         
+            </div>
+          </div>
+
 
           <div class="flex items-center justify-between w-full p-3 border-t border-gray-300">
             <button>
@@ -123,7 +127,7 @@
                   d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
               </svg>
             </button>
-          </div>-->
+          </div>
         </div>
       </div>
     </div>
@@ -133,21 +137,26 @@
 <script lang="ts">
 import { ref, onMounted } from 'vue';
 
+interface Message {
+  from: string;
+  message: string;
+}
+
 export default {
   name: 'MainBars',
-  /*
+
   setup() {
+
     const connection_ready = ref(false);
     const connection_error = ref(false);
-    const nickname = ref('');
-    const websocket = ref(null);
+    const nickname = ref<String>;
+    const websocket = ref<WebSocket | null>(null);
     const new_message = ref('');
-    const messages = ref([]);
+    const messages = ref<Message[]>([]);
 
     const init_chat = () => {
-      if (!nickname.value) {
-        nickname.value = prompt('Ваше имя для чата');
-      }
+      
+     
 
       const sockets_bay_url = `wss://socketsbay.com/wss/v2/1/demo/`;
       websocket.value = new WebSocket(sockets_bay_url);
@@ -156,25 +165,31 @@ export default {
         connection_ready.value = true;
       };
 
-      websocket.value.onmessage = (evt: any) => {
+      websocket.value.onmessage = (evt: MessageEvent) => {
         const received = JSON.parse(evt.data);
         messages.value.push({ from: 'other', message: received.message });
 
         const messages_div = document.getElementById('messages');
-        messages_div.scrollTo({ top: messages_div.scrollHeight, behavior: 'smooth' });
+        if (messages_div) {
+          messages_div.scrollTo({ top: messages_div.scrollHeight, behavior: 'smooth' });
+        }
       };
 
-      websocket.value.onerror = () => {
+      websocket.value.onerror = (evt: Event) => {
         connection_error.value = true;
       };
     };
 
     const send_message = () => {
-      const to_send = { from: nickname.value, message: new_message.value };
+      if (!websocket.value) {
+        return;
+      }
+      const to_send = { from: nickname, message: new_message.value };
       websocket.value.send(JSON.stringify(to_send));
       messages.value.push({ from: 'me', message: new_message.value });
       new_message.value = '';
     };
+
 
     onMounted(() => {
       init_chat();
@@ -187,6 +202,8 @@ export default {
       send_message,
       messages,
     };
-  },*/
+  },
 };
+
 </script>
+

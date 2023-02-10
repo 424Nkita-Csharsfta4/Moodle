@@ -1,28 +1,37 @@
 <template>
-    <div  x-data="{ isOpen: false }"  class="font-roboto overflow-hidden bg-gray-100 absolute inset-x-0 z-20 flex-1 w-full ">
+    <div x-data="{ isOpen: false }"
+        class="font-roboto overflow-hidden bg-gray-100 absolute inset-x-0 z-20 flex-1 w-full ">
         <nav class="bg-white px-6 py-4 shadow container lg:flex lg:px-16 lg:-mx-4 lg:flex-row lg:items-center">
             <div class="flex flex-col container mx-auto md:flex-row md:items-center md:justify-between">
                 <div class="flex justify-between items-center lg:flex lg:items-center">
-                    <div class="lg:flex lg:items-center"><a href="/page" class="text-gray-800 text-xl font-bold md:text-2xl">Moodle</a></div>                   
-                    <RouterLink to="/chat"
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Сообщения</RouterLink>
-                        <RouterLink to="/page" 
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Профиль</RouterLink>
-                        <RouterLink to="/err" 
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Музыка</RouterLink>
-                       
-                    </div>     
-                    <div class="py-1 mt-1 -mx-1 overflow-y-auto whitespace-nowrap scroll-hidden ">
-                        <RouterLink to="/fullusers"
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Пользователи</RouterLink>
-                        <RouterLink to="/news"
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Новости</RouterLink>
-                        <RouterLink to="/typescript"
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Тесты</RouterLink>
-                        <RouterLink to="/calendar" readblogs
-                        class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Календарь</RouterLink>
-           
-        </div>
+                    <div class="lg:flex lg:items-center"><a href="/page"
+                            class="text-gray-800 text-xl font-bold md:text-2xl">Moodle</a></div>
+                    <RouterLink to="/chat" class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Сообщения
+                    </RouterLink>
+                    <RouterLink to="/page" class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Профиль
+                    </RouterLink>
+                    <a href="https://vk.com/music/playlist/560532717_58" class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0">Музыка
+                    </a>
+
+                </div>
+                <div class="py-1 mt-1 -mx-1 overflow-y-auto whitespace-nowrap scroll-hidden ">
+                    <RouterLink to="/fullusers" class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">
+                        Пользователи</RouterLink>
+                    <RouterLink to="/news" class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">Новости
+                    </RouterLink>
+                    <RouterLink to="/quizemain" class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">
+                        Тесты</RouterLink>
+
+                    <RouterLink to="/calendar" class="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0 pl-2">
+                        
+                        <button class="inline-block relative">
+                            Календарь
+                            <span
+                                class="animate-ping absolute top-1 right-0.5 block h-1 w-1 rounded-full ring-2 ring-red-400 bg-red-600"></span>
+                        </button>
+                    </RouterLink>
+
+                </div>
             </div>
         </nav>
 
@@ -31,9 +40,9 @@
                 <div class="w-full lg:w-8/12">
                     <div class="flex items-center justify-between">
                         <h1 class="text-xl font-bold text-gray-700 md:text-2xl">Посты</h1>
-                        <RouterLink to="/createpost"
-                        class="text-xl font-bold text-gray-700 md:text-2xl">Добавить пост</RouterLink>
-                        
+                        <RouterLink to="/createpost" class="text-xl font-bold text-gray-700 md:text-2xl">Добавить пост
+                        </RouterLink>
+
                         <div><select
                                 class="block bg-gray-300 text-gray-700 py-2 px-2 rounded-lg focus:outline-none md:py-3">
                                 <option>Последнии</option>
@@ -42,19 +51,20 @@
                     </div>
                     <div class="mt-6">
                         <div class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
-                            <div class="flex justify-between items-center"><span class="font-light text-gray-600">Июнь 16,
+                            <div class="flex justify-between items-center"><span class="font-light text-gray-600">Июнь
+                                    16,
                                     2020</span><a href="#"
                                     class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Аниме</a>
                             </div>
-                            <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline">Новый сезон Атаки Титанов</a>
+                            <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline">Новый
+                                    сезон Атаки Титанов</a>
                                 <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                     Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                     reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
                             </div>
                             <div class="flex justify-between items-center mt-4">
-                                
-                                <RouterLink to="/readblogs"
-                                    class="text-blue-500 hover:underline">Читать</RouterLink>
+
+                                <RouterLink to="/readblogs" class="text-blue-500 hover:underline">Читать</RouterLink>
                                 <div><a href="#" class="flex items-center"><img
                                             src="https://sun9-west.userapi.com/sun9-49/s/v1/ig2/0KFhmIedJJWvn9W5R3QsK_i-5Q9M-tjLdJnqkYKcauHz9MnptSVqoNusLCdyq5lb_CDv5L8LpVxjDkEUfO0NwGOG.jpg?size=1183x987&quality=95&type=album"
                                             alt="avatar"
@@ -66,19 +76,19 @@
                     </div>
                     <div class="mt-6">
                         <div class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
-                            <div class="flex justify-between items-center"><span class="font-light text-gray-600">Март 4,
+                            <div class="flex justify-between items-center"><span class="font-light text-gray-600">Март
+                                    4,
                                     2019</span><a href="#"
                                     class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">PHP</a>
                             </div>
-                            <div class="mt-2"><a href="#"
-                                    class="text-2xl text-gray-700 font-bold hover:underline">Вот сижу и смотрю на него и захотелось долара</a>
+                            <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline">Вот
+                                    сижу и смотрю на него и захотелось долара</a>
                                 <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                     Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                     reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
                             </div>
                             <div class="flex justify-between items-center mt-4">
-                                <RouterLink to="/readblogs"
-                                    class="text-blue-500 hover:underline">Читать</RouterLink>
+                                <RouterLink to="/readblogs" class="text-blue-500 hover:underline">Читать</RouterLink>
                                 <div><a href="#" class="flex items-center"><img
                                             src="https://avatars.dzeninfra.ru/get-zen_doc/5031224/pub_631a459d8cfe570980e79013_631a45af77e4ed50aa753580/scale_1200"
                                             alt="avatar"
@@ -100,8 +110,8 @@
                                     Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                     reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
                             </div>
-                            <div class="flex justify-between items-center mt-4">       <RouterLink to="/readblogs"
-                                    class="text-blue-500 hover:underline">Читать</RouterLink>
+                            <div class="flex justify-between items-center mt-4">
+                                <RouterLink to="/readblogs" class="text-blue-500 hover:underline">Читать</RouterLink>
                                 <div><a href="#" class="flex items-center"><img
                                             src="https://sun9-west.userapi.com/sun9-49/s/v1/ig2/0KFhmIedJJWvn9W5R3QsK_i-5Q9M-tjLdJnqkYKcauHz9MnptSVqoNusLCdyq5lb_CDv5L8LpVxjDkEUfO0NwGOG.jpg?size=1183x987&quality=95&type=album"
                                             alt="avatar"
@@ -113,18 +123,19 @@
                     </div>
                     <div class="mt-6">
                         <div class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
-                            <div class="flex justify-between items-center"><span class="font-light text-gray-600">Декабрь
+                            <div class="flex justify-between items-center"><span
+                                    class="font-light text-gray-600">Декабрь
                                     23, 2023</span><a href="#"
                                     class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">PHP</a>
                             </div>
-                            <div class="mt-2"><a href="#"
-                                    class="text-2xl text-gray-700 font-bold hover:underline">Зачем мне в PHP классы</a>
+                            <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline">Зачем
+                                    мне в PHP классы</a>
                                 <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                     Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                     reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
                             </div>
-                            <div class="flex justify-between items-center mt-4">       <RouterLink to="/readblogs"
-                                    class="text-blue-500 hover:underline">Читать</RouterLink>
+                            <div class="flex justify-between items-center mt-4">
+                                <RouterLink to="/readblogs" class="text-blue-500 hover:underline">Читать</RouterLink>
                                 <div><a href="#" class="flex items-center"><img
                                             src="https://sun9-west.userapi.com/sun9-45/s/v1/ig2/OTdMSPoUPfYAr74tizLw9Oafy8BL_h2ZF2XX8tQLEJPB4Wz_4AErA0PnJEtZnM2iaog9fGYT3C1sBKLd50bbZ2iA.jpg?size=480x463&quality=96&type=album"
                                             alt="avatar"
@@ -140,13 +151,15 @@
                                     13, 2022</span><a href="#"
                                     class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a>
                             </div>
-                            <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline">Laravel это такой сорт колбасы я его ел вчера, очень вкусно.</a>
+                            <div class="mt-2"><a href="#"
+                                    class="text-2xl text-gray-700 font-bold hover:underline">Laravel это такой сорт
+                                    колбасы я его ел вчера, очень вкусно.</a>
                                 <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                                     Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim
                                     reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
                             </div>
-                            <div class="flex justify-between items-center mt-4">       <RouterLink to="/readblogs"
-                                    class="text-blue-500 hover:underline">Читать</RouterLink>
+                            <div class="flex justify-between items-center mt-4">
+                                <RouterLink to="/readblogs" class="text-blue-500 hover:underline">Читать</RouterLink>
                                 <div><a href="#" class="flex items-center"><img
                                             src="https://sun9-west.userapi.com/sun9-12/s/v1/ig2/S4Io9X8lMZjfigRzBMP0LZsqWONDzYuLrb7EY1wwETo66uvOAyc-3EN8Q9IlWb1a-c_SxiscCaQuYAUCrGMLGmGv.jpg?size=735x919&quality=95&type=album"
                                             alt="avatar"
@@ -162,16 +175,20 @@
                                     class="flex items-center font-bold">назад</a></li>
                             <li
                                 class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
-                                <a href="#" class="font-bold">1</a></li>
+                                <a href="#" class="font-bold">1</a>
+                            </li>
                             <li
                                 class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
-                                <a href="#" class="font-bold">2</a></li>
+                                <a href="#" class="font-bold">2</a>
+                            </li>
                             <li
                                 class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
-                                <a href="#" class="font-bold">3</a></li>
+                                <a href="#" class="font-bold">3</a>
+                            </li>
                             <li
                                 class="mx-1 px-3 py-2 bg-gray-200 text-gray-700 hover:bg-gray-700 hover:text-gray-200 rounded-lg">
-                                <a href="#" class="flex items-center font-bold">Вперед</a></li>
+                                <a href="#" class="flex items-center font-bold">Вперед</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -185,24 +202,28 @@
                                         alt="avatar" class="w-10 h-10 object-cover rounded-full mx-4">
                                     <p><a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Admin
 
-                                    </a><span class="text-gray-700 text-sm font-light">Июнь 16, 2020
+                                        </a><span class="text-gray-700 text-sm font-light">Июнь 16, 2020
                                             Пост</span></p>
                                 </li>
                                 <li class="flex items-center mt-6"><img
                                         src="https://avatars.dzeninfra.ru/get-zen_doc/5031224/pub_631a459d8cfe570980e79013_631a45af77e4ed50aa753580/scale_1200"
                                         alt="avatar" class="w-10 h-10 object-cover rounded-full mx-4">
-                                    <p><a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Дуэйн Джонсон</a><span class="text-gray-700 text-sm font-light">Март 4, 2019
+                                    <p><a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Дуэйн
+                                            Джонсон</a><span class="text-gray-700 text-sm font-light">Март 4, 2019
                                             Пост</span></p>
                                 </li>
                                 <li class="flex items-center mt-6"><img
                                         src="https://sun9-west.userapi.com/sun9-45/s/v1/ig2/OTdMSPoUPfYAr74tizLw9Oafy8BL_h2ZF2XX8tQLEJPB4Wz_4AErA0PnJEtZnM2iaog9fGYT3C1sBKLd50bbZ2iA.jpg?size=480x463&quality=96&type=album"
                                         alt="avatar" class="w-10 h-10 object-cover rounded-full mx-4">
-                                    <p><a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Vladislave</a><span class="text-gray-700 text-sm font-light">Декабрь 23, 2023</span></p>
+                                    <p><a href="#"
+                                            class="text-gray-700 font-bold mx-1 hover:underline">Vladislave</a><span
+                                            class="text-gray-700 text-sm font-light">Декабрь 23, 2023</span></p>
                                 </li>
                                 <li class="flex items-center mt-6"><img
                                         src="https://sun9-west.userapi.com/sun9-12/s/v1/ig2/S4Io9X8lMZjfigRzBMP0LZsqWONDzYuLrb7EY1wwETo66uvOAyc-3EN8Q9IlWb1a-c_SxiscCaQuYAUCrGMLGmGv.jpg?size=735x919&quality=95&type=album"
                                         alt="avatar" class="w-10 h-10 object-cover rounded-full mx-4">
-                                    <p><a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Чертов Паша</a><span class="text-gray-700 text-sm font-light">Осень 13, 2022
+                                    <p><a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Чертов
+                                            Паша</a><span class="text-gray-700 text-sm font-light">Осень 13, 2022
                                             Пост</span></p>
                                 </li>
                             </ul>
@@ -240,7 +261,8 @@
                                     class="px-2 py-1 bg-gray-600 text-sm text-green-100 rounded hover:bg-gray-500">PHP</a>
                             </div>
                             <div class="mt-4"><a href="#"
-                                    class="text-lg text-gray-700 font-medium hover:underline">Зачем мне в PHP классы</a></div>
+                                    class="text-lg text-gray-700 font-medium hover:underline">Зачем мне в PHP классы</a>
+                            </div>
                             <div class="flex justify-between items-center mt-4">
                                 <div class="flex items-center"><img
                                         src="https://sun9-west.userapi.com/sun9-45/s/v1/ig2/OTdMSPoUPfYAr74tizLw9Oafy8BL_h2ZF2XX8tQLEJPB4Wz_4AErA0PnJEtZnM2iaog9fGYT3C1sBKLd50bbZ2iA.jpg?size=480x463&quality=96&type=album"
@@ -253,7 +275,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
 </template>
@@ -317,9 +339,9 @@ export default {
 }
 </script>
 <style>
-    .scroll-hidden::-webkit-scrollbar {
-        height: 0px;
-        background: transparent;
-        /* make scrollbar transparent */
-    }
+.scroll-hidden::-webkit-scrollbar {
+    height: 0px;
+    background: transparent;
+    /* make scrollbar transparent */
+}
 </style>

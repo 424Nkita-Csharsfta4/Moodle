@@ -1,74 +1,74 @@
-<!-----<template>
-    <div class="flex">
-        <button class="btn-primary" @click="reset">Today</button>
-        <button class="btn" @click="shiftMonth(-1)">Previous</button>
-        <button class="btn" @click="shiftMonth(1)">Next</button>
-        <span class="text-3xl">{{ viewDate.format('MMMM YYYY') }}</span>
-    </div>
-    <div class="grid grid-cols-7 gap-1">
-        <div v-for="d in weekDays" class="text-center">
-            <div>{{ d }}</div>
-        </div>
-    </div>
-    <div class="grid grid-cols-7">
-        <div v-for="p in daystoPrepend"></div>
-        <div class="border border-slate-200 flex flex-col h-32" v-for="d in units">
-            <div :class="[d.isToday ? 'bg-red-300' : '']" class="text-center">{{ d.format('D') }}</div>
-        </div>
-    </div>
-</template>-->
+<template>
+    <Qalendar :selected-date="new Date(2022, 0, 8)" :events="events" :config="config" />
+</template>
+
 <script lang="ts">
-/*
-import dayjs from 'dayjs';
-import 'dayjs/plugin/isToday';
-
-const viewDate = dayjs();
-
-const daystoPrepend = [];
-
-const units = dayjs()
-    .startOf('month')
-    .subtract(1, 'day')
-    .endOf('month')
-    .add(1, 'day')
-    .diff(viewDate.startOf('month').subtract(1, 'day'), 'day')
-    .map(() => {
-        viewDate.add(1, 'day');
-        return viewDate;
-    });
-
-const shiftMonth = (amount :any) => {
-    viewDate.add(amount, 'month');
-};
-
-const reset = () => {
-    viewDate = dayjs();
-};
-
-const weekDays = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-];
+import { Qalendar } from "qalendar";
 
 export default {
+    components: {
+        Qalendar,
+    },
+
     data() {
         return {
-            viewDate,
-            daystoPrepend,
-            units,
-            weekDays,
+            events: [
+                {
+                    title: "Сдано",
+                    with: "Системное программирование",
+                    time: { start: "2022-01-01 04:52", end: "2022-01-01 05:37" },
+                    color: "green",
+                    isEditable: true,
+                    id: "de471c78cb5c",
+                    description:
+                        "Все сделанно в наилучшем виде.",
+                },
+                {
+                    title: "Задолжность",
+                    with: "Защита баз данных",
+                    time: { start: "2022-01-02 20:05", end: "2022-01-02 21:35" },
+                    colorScheme: "sports",
+                    isEditable: true,
+                    id: "6d3c0980a5cf",
+                    description:
+                        "Вы не правильно сделали бд в Acsess.",
+                },
+                {
+                    title: "Задание требующие внимание",
+                    with: "Физ-ра",
+                    time: { start: "2022-01-02 22:10", end: "2022-01-02 22:55" },
+                    colorScheme: "meetings",
+                    isEditable: true,
+                    id: "9f1b209982f1",
+                    description:
+                        "Zoom.",
+                    location: "Tiraspol",
+                },
+                // ... and more
+            ],
+
+            config: {
+                locale: "Ru",
+                defaultMode: "month",
+                style: {
+                    colorSchemes: {
+                        meetings: {
+                            color: "#fff",
+                            backgroundColor: "#131313",
+                        },
+                        sports: {
+                            color: "#fff",
+                            backgroundColor: "#ff4081",
+                        },
+                    },
+                },
+            },
         };
     },
-    methods: {
-        shiftMonth,
-        reset,
-    },
-};*/
+};
 </script>
 
+<style>
+@import "qalendar/dist/style.css";
+</style>
 

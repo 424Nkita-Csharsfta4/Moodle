@@ -10,10 +10,14 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.4",
+    "@fullcalendar/vue3": "^6.1.4",
     "@headlessui/vue": "^1.7.9",
     "axios": "^1.2.5",
     "dayjs": "^1.11.7",
     "pinia": "^2.0.30",
+    "qalendar": "^1.17.0",
+    "uniqolor": "^1.1.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
