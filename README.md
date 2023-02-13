@@ -1,6 +1,7 @@
 # moofils
 
 This template should help get you started developing with Vue 3 in Vite.
+![image](https://user-images.githubusercontent.com/103760832/218572728-4fbf937d-0626-4359-b6b3-b99852efac63.png)
 
 ## Recommended IDE Setup
 
